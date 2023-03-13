@@ -4,7 +4,7 @@ import { getAccessToken, removeFromStorage } from "@/services/auth/auth.helper";
 import { AuthService } from "@/services/auth/auth.service";
 
 const axiosOptions = {
-	baseURL: process.env.SERVER_URL,
+	baseURL: process.env.REACT_APP_SERVER_URL,
 	headers: getContentType(),
 };
 
