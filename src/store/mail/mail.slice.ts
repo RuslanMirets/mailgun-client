@@ -1,15 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { sendMail } from "./mail.actions";
-
-interface IInitialState {
-	mail: IMail | null;
-}
-
-interface IMail {
-	email: string;
-	subject: string;
-	message: string;
-}
+import { IInitialState } from "./mail.interface";
 
 const initialState: IInitialState = {
 	mail: null,

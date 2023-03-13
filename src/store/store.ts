@@ -11,6 +11,7 @@ import {
 	REGISTER,
 	REHYDRATE,
 } from "redux-persist";
+import { mailSlice } from "./mail/mail.slice";
 
 const persistConfig = {
 	key: "mailgun-app",
@@ -19,6 +20,7 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
 	user: userSlice.reducer,
+	mail: mailSlice.reducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

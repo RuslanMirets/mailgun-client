@@ -1,7 +1,6 @@
 import { MailService } from "@/services/mail.service";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { toast } from "react-toastify";
-import { IMail } from "./mail.interface";
 
 export const sendMail = createAsyncThunk(
 	"mail/send",

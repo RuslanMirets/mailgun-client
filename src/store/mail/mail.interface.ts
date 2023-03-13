@@ -3,3 +3,7 @@ export interface IMail {
 	subject: string;
 	message: string;
 }
+
+export interface IInitialState {
+	mail: IMail | null;
+}

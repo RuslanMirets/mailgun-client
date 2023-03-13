@@ -1,4 +1,5 @@
 import { useActions } from "@/hooks/useActions";
+import { useTypedSelector } from "@/hooks/useTypedSelector";
 import { MailFormSchema } from "@/utils/validation";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button } from "@mui/material";
@@ -9,16 +10,31 @@ import styles from "./MailForm.module.scss";
 
 const MailForm: FC = () => {
 	const { sendMail } = useActions();
+	const { mail } = useTypedSelector((state) => state.mail);
 
 	const methods = useForm({
 		mode: "onChange",
 		resolver: yupResolver(MailFormSchema),
+		defaultValues: {
+			email: "",
+			subject: "",
+			message: "",
+		},
 	});
 
 	const onSubmit = async (data: any) => {
 		await sendMail(data);
-		console.log(methods.formState.isSubmitting);
 	};
+
+	useEffect(() => {
+		if (mail) {
+			methods.reset({
+				email: "",
+				subject: "",
+				message: "",
+			});
+		}
+	}, [mail]);
 
 	return (
 		<>
