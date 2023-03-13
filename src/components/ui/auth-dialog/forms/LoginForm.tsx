@@ -31,7 +31,7 @@ const LoginForm: FC = () => {
 					color="primary"
 					variant="contained"
 				>
-					Войти
+					{methods.formState.isSubmitting ? "Вход..." : "Войти"}
 				</Button>
 			</form>
 		</FormProvider>

@@ -33,7 +33,9 @@ const RegisterForm: FC = () => {
 					color="primary"
 					variant="contained"
 				>
-					Регистрация
+					{methods.formState.isSubmitting
+						? "Регистрация..."
+						: "Зарегистрироваться"}
 				</Button>
 			</form>
 		</FormProvider>

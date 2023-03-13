@@ -20,10 +20,6 @@ const MailForm: FC = () => {
 		console.log(methods.formState.isSubmitting);
 	};
 
-	useEffect(() => {
-		console.log(methods.formState.isSubmitting);
-	}, [methods.formState.isSubmitting]);
-
 	return (
 		<>
 			<FormProvider {...methods}>
