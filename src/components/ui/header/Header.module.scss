@@ -1,0 +1,12 @@
+.root {
+	color: #fff;
+	background-color: #333;
+
+	.body {
+		min-height: 60px;
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		gap: 20px;
+	}
+}
